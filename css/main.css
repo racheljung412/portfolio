@@ -1,0 +1,1218 @@
+@font-face{
+    font-family:'TheHistoriaDemo';
+    src: url('../fonts/TheHistoriaDemo.ttf') format('truetype');
+}
+
+@font-face {
+	font-family:'Spoqa Han Sans Regular';
+	src:url('../fonts/SpoqaHanSans_all/SpoqaHanSans_original/Spoqa Han Sans Regular.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Spoqa Han Sans Bold';
+	src:url('../fonts/SpoqaHanSans_all/SpoqaHanSans_original/Spoqa Han Sans Bold.ttf') format('truetype');
+}
+
+@font-face {
+	font-family:'Poppins-Regular';
+	src : url('../fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+}
+@font-face {
+	font-family:'Poppins-Bold';
+	src : url('../fonts/Poppins/Poppins-Bold.ttf') format('truetype');
+}
+
+
+html{
+    font-size:10px;
+    font-family: 'Roboto', sans-serif;
+    color:#eee;
+}
+
+body{
+    width:100%;
+    height: 100%;
+	font-family:'Poppins-Regular';
+}
+
+
+.logo{
+    background: url(../images/EJ_logo.png) center no-repeat;
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: 1%;
+    -webkit-transform: skew(-20deg);
+    -moz-transform: skew(-20deg);
+    transform: skew(-20deg);
+}
+
+p{
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+
+section{
+    padding:6rem 0;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+/* reusable 시작 */
+.container{
+    width:90%;
+    max-width: 120rem;
+    height: 100vh;
+    margin:0 auto;
+    position: relative;
+}
+
+.section-heading{
+    text-align: left;
+    margin-bottom: 10rem;
+}
+
+.section-heading h1{
+    font-size: 3.5rem;
+    color:rgba(255,255,255,.3);
+    text-transform: uppercase;
+    font-weight: 300;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.section-heading h6{
+    font-size: 1.6rem;
+    font-weight: 300; 
+}
+
+.has-margin-right{
+    margin-right: 5rem;
+}
+
+
+/* reusable 끝 */
+
+/* header 시작 */
+header{
+    width:100%;
+    height: 100vh;
+    background:url(../images/header.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.top-nav{
+    width:100%;
+    height: 100vh;
+    position: fixed;
+    top:-100vh;
+    z-index: 50;
+    background-color: #16162d;
+    border-bottom-right-radius: 100%;
+    border-bottom-left-radius: 100%;
+    transition:all 650ms cubic-bezier(1,0,0,1); 
+}
+
+.nav-list{
+    list-style: none;
+    width:100%;
+    height: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center;  
+}
+
+.nav-list li{
+    margin:0 2rem;
+}
+
+.nav-link{
+    font-family: 'TheHistoriaDemo', sans-serif;
+    font-size:5rem;
+    padding:1rem;
+}
+
+.nav-link:hover,
+.nav-link:focus{
+    background: linear-gradient(to top,#ffe838,#fd57df);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.top-nav.open{
+    top:0;
+    border-radius: initial;
+}
+
+/* 햄버거메뉴 */
+.menu-toggler{
+    position: fixed;
+    top:5rem;
+    right: 5rem;
+    width:5rem;
+    height: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor:pointer;
+    z-index: 1500;
+    transition:transform 650ms ease-out;
+}
+
+.menu-toggler.open{
+    transform:rotate(-45deg);
+}
+
+.bar{
+    background:linear-gradient(to right,#ffe838, #fff);
+    width:100%;
+    height: 4px;
+    border-radius: .8rem;
+}
+
+.bar.half{
+    width:50%; 
+}
+
+.bar.start{
+    transform-origin: right;
+    transition: transform 650ms cubic-bezier(0.54,-0.81,0.57,0.57);
+}
+
+.open .bar.start{
+    transform:rotate(-450deg) translateX(.8rem); 
+}
+  
+.bar.end{
+    align-self: flex-end;
+    transform-origin: left;
+    transition: transform 650ms cubic-bezier(0.54,-0.81,0.57,0.57);
+}
+
+.open .bar.end{
+    transform:rotate(-450deg) translateX(-.8rem);
+}
+
+.landing-text {
+    position: absolute;
+    top: 50%;
+    left: 65%;
+    transform: translate(-50%,-50%);
+    width: 50%;
+    z-index: 1;
+}
+
+/* .slogan{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);  
+    width: 60%;
+  } */
+
+  .st0 {
+    fill: #fff;
+    stroke: #fff;
+    stroke-width: 3;
+    stroke-miterlimit: 10;
+  }
+  .st1 {
+    fill: #FFD42B;
+    stroke: #FFD42B;
+    stroke-width: 3;
+    stroke-miterlimit: 10;
+  }
+
+  path{
+    stroke: #fff;
+    fill: #fff;
+    stroke-dasharray: 1800;
+    opacity: 10;
+    animation: animate 3s cubic-bezier(0,0.23,1,.1);
+  }
+
+  @keyframes animate {
+    0% {
+      opacity: 0;
+      stroke-dashoffset: 1800;
+    }
+
+    30% {
+      opacity: 10;
+      fill: none;
+      stroke-dashoffset: 1800;
+    }
+
+    90% {
+      fill: rgba(255, 255, 255, 0);
+    }
+
+    100% {
+      opacity: 10;
+      fill: rgba(255, 255, 255, 1);
+      stroke-dashoffset: 0;
+    }
+  }
+
+
+.landing-text h6{
+    font-size: 2rem;
+    font-weight: 300;
+    color:#fff;
+    text-align: right;
+    margin-top: 1rem;
+    user-select: none;
+}
+
+@-webkit-keyframes scroll-inner {
+    from {
+      margin-top: 15%;
+    }
+  
+    to {
+      margin-top: 50%;
+    }
+  }
+  
+  @keyframes scroll-inner {
+    from {
+      margin-top: 15%;
+    }
+  
+    to {
+      margin-top: 50%;
+    }
+  }
+  
+  @-webkit-keyframes scroll-mouse {
+    from {
+      margin-top: 0;
+    }
+  
+    to {
+      margin-top: 15px;
+    }
+  }
+  
+  @keyframes scroll-mouse {
+    from {
+      margin-top: 0;
+    }
+  
+    to {
+      margin-top: 15px;
+    }
+  }
+  
+  .mouse-container {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50px);
+    height: 80px;
+    display: block;
+  }
+  
+  .mouse {
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    width: 25px;
+    height: 50px;
+    border: solid 2px #fff;
+    border-radius: 25px;
+    -webkit-animation: scroll-mouse 1.5s;
+    animation: scroll-mouse 1.5s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+  }
+  
+  .mouse .scroll-down {
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    margin: 15% auto auto auto;
+    -webkit-animation: scroll-inner 1.5s;
+    animation: scroll-inner 1.5s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease;
+    animation-timing-function: ease;
+  }
+
+/* header 끝 */
+
+/* about 시작 */
+.contact{
+    background: #26084A;
+}
+
+
+.contact .container_inner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10rem;
+}
+
+
+.about-heading{
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 0;
+    margin-bottom: 6rem;
+}
+
+.about-heading h1{
+    font-size:10rem;
+    opacity: .3;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 0.65px;
+}
+
+.about-heading h6{
+    font-size:2rem;
+    font-weight: 300;
+    color: #fff;
+}
+
+.about-details{
+    flex:1;
+}
+
+.info_detail{
+    color: #fff;
+    letter-spacing: 0.65px;
+    line-height: 1.65;
+}
+
+.profile-img{
+    flex:1;
+    margin-right: 5rem;
+    text-align: right;
+}
+
+.profile-img img{
+    width:75%;
+    border:1px solid transparent;
+    border-radius: 2rem;
+}
+
+.contact_info_list{
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    line-height: 3;
+    font-size: 1.5rem;
+}
+
+.contact_info_list li a i{
+    margin:0 2rem;
+    opacity: .5;
+}
+
+.contact_info_list li a:hover { 
+    color: none;
+    text-decoration:none;
+}
+
+/* about 끝 */
+
+/* Services 시작 */
+.my-skills{
+    margin-top: 10rem;
+    display: grid;
+    grid-template-columns:repeat(auto-fit,minmax(25rem, 1fr));
+    grid-gap:2.5rem;
+    text-align: center;
+}
+
+.skill{
+    display: flex;
+    flex-direction: column;
+    align-items:center; 
+}
+
+.skill h1{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 2rem 2px 2rem 0;
+}
+
+.icon-container{
+    width: 10rem;
+    height: 10rem;
+    border:3px solid #ffe838;
+    background-color:#fd57df;
+    margin-bottom:2rem;
+    display: flex;
+    transform: rotate(45deg);      
+}
+
+.icon-container i{
+    color:#ffe838;
+    font-size:5rem;
+    margin:auto;
+    transform: rotate(-45deg);
+}
+
+/* portfolio 시작 */
+.portfolio-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5rem;
+}
+
+.portfolio-item:last-child{
+    margin-bottom: 0;
+}
+
+.portfolio-img{
+    width:50rem;
+    flex:1;
+}
+
+.portfolio-description{
+    flex:1;
+}
+
+.portfolio-description h1{
+    font-size:3rem;
+    font-weight: 300;
+    margin:1rem 0;
+}
+
+.portfolio-description h6{
+    font-size:1.5rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    opacity: 0.3;
+}
+.portfolio-description .cta{
+    display: inline-block;
+    margin-top:2.5rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color:#3883ff;
+    transition: color 650ms;
+}
+
+.portfolio-description .cta:hover{
+    color:#2f67cd;
+}
+
+/* portfolio 끝 */
+
+
+/* works 시작 */
+.works{
+    background-color: #26084A;
+    padding: 0 0 5rem 0;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 100vh;
+}
+.swiper-slide {
+/* font-size: 18px; */
+background: #26084A;
+
+}
+
+.swiper_inner{
+width: 90%;
+max-width: 120rem;
+height: 100%;
+margin:0 auto;
+position: relative;
+}
+
+.works_stl{
+    width: 100%;
+    height:58.6rem;
+    padding: 3rem 3.5rem;
+}
+
+.works_img_01{
+    background: url(../images/portfolio_img/yondu.png) center no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.works_img_02{
+    background: url(../images/portfolio_img/sidmool.png) center no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.works_img_03{
+    background: url(../images/portfolio_img/canada_n.png) center no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.works_img_04{
+    background: url(../images/portfolio_img/sk_tel.png) center no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.works_img_05{
+    background: url(../images/portfolio_img/nation.png) center no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.project_tit{
+    position: absolute;
+    bottom: 2rem;
+    font-family:'Spoqa Han Sans Regular';
+    line-height: 1.9;
+}
+
+.works_tit{
+    color: #333;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.works_tit_wh{
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.kor_tit{
+    margin-top: 1.2rem;
+}
+
+.works_txt p {
+    color: #fff;
+    font-size: 1.8rem;
+    display: block;
+    margin: 4.5rem 0;
+    line-height: 1.65;
+}
+
+.cf_info {
+    font-size: 1.5rem;
+    display: block;
+    margin-top: 1.1rem;
+}
+
+.works_detail li{
+    display: inline-block;
+    margin: 0 12rem 0 0;
+    color: #fff;
+}
+
+.works_detail li span{
+    display: block;
+}
+
+.works_detail .detail_tit{
+    font-size: 1.5rem;
+    letter-spacing: 0.06px;
+    margin-bottom: 1.2rem;
+}
+
+.works_detail .detail_txt{
+    font-size: 1.9rem;
+}
+
+.link_box{
+    width: 100%;
+    position: relative;
+    padding: 0 1rem;
+    line-height: 5rem;
+    height: 5rem;
+    border: 1px solid #37419A;
+    text-align: center;
+    
+}
+
+.link_box span{
+    position: absolute;
+    transition: all .5s;
+    background:#ffe838;
+}
+
+.link_box span:nth-child(1){
+    left: -1px;
+    top: -1px;
+    width: 0;
+    height: 3px;
+}
+
+.link_box:hover span:nth-child(1){
+    width: 100%;
+    padding:0 2px 0 0;
+}
+
+.link_box span:nth-child(2){
+    right: -1px;
+    top: 0;
+    width: 3px;
+    height: 0;
+}
+
+.link_box:hover span:nth-child(2){
+    width: 3px;
+    height: 100%;
+}
+
+.link_box span:nth-child(3){
+    right: 0;
+    bottom: -1px;
+    width: 0;
+    height: 3px;
+}
+
+.link_box:hover span:nth-child(3){
+    width: 100%;
+}
+
+.link_box span:nth-child(4){
+    left: -1px;
+    bottom: 0;
+    width: 3px;
+    height: 0;
+}
+
+.link_box:hover span:nth-child(4){
+    height: 100%;
+}
+
+
+
+
+.web_link{
+    text-decoration: none;
+    display: block;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+    transition: color .5s;
+}
+
+
+
+.web_link:hover {
+   text-decoration: none;
+   color:#ffe838;
+  }
+  
+  .web_link:active {
+  
+  }
+/* works 끝 */
+
+/* design 시작 */
+.design{
+    background-color: #37419A;
+}
+
+.design .container{
+    width:90%;
+    max-width: 135rem;
+    height: 100vh;
+    margin:0 auto;
+    /* position: relative; */
+}
+
+.row{
+    position: absolute;
+    top: 20%;
+    left: 0;
+  }
+  
+  .box {
+    position: relative;
+    width: 100%;
+    height: 44.8rem;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #000;
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    -webkit-transition: .5s;
+    transition: .5s;
+  }
+  
+  .box:hover {
+    transform: translateY(-30px);
+    box-shadow: 0 50px 50px rgba(0, 0, 0, .5);
+  }
+  
+  .box .imgBox {
+    position: relative;
+  }
+  
+  .box .imgBox img {
+    -webkit-transition: .5s;
+    transition: .5s;
+  }
+  
+  .box:hover .imgBox img {
+    opacity: .5;
+    transform: translateY(-40px);
+  }
+  
+  .box .content {
+    position: absolute;
+    left: 0;
+    bottom: -40px;
+    padding: 20px;
+    box-sizing: border-box;
+    -webkit-transition: .5s;
+    transition: .5s;
+    opacity: 0;
+  }
+  
+  .box:hover .content {
+    bottom: 0;
+    opacity: 1;
+  }
+  
+  .box .content h3 {
+    color: #fff;
+    font-size: 2.5em;
+    font-weight: 700;
+  }
+  
+  .box .content p {
+    margin: 10px 0px;
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+  
+  .box .content .btnD {
+    border: none;
+    background: #5ac5ff;
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: 700;
+    padding: 10px 15px;
+    transition: .5s;
+  }
+  
+  .box .content .btnD:hover {
+    background: #FFC32B;
+    color: #262626;
+  }
+
+  /* 팝업창 설정 */
+.main {
+    width: 100%;
+    height: auto;
+    display: none;
+    overflow: hidden;
+    position: absolute;
+    top: 25%;
+    left: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 999;
+  }
+  
+  .popup_container {
+    display: block;
+    width: 100%;
+    height: 50rem;
+    position: relative;
+    top: 0;
+    left: 0;
+    background: none;
+    margin: 20px auto;
+    padding-top: 50px;
+    overflow: hidden;
+    transition: 0.7s ease;
+  }
+  
+  .popup_container .popup {
+    display: block;
+    overflow: hidden;
+    width: 800px;
+    height: 400px;
+    background: url(../images/graphic/01_poster.png) no-repeat;
+    margin: auto;
+    transition: 0.85s ease;
+    z-index: -2;
+  }
+  
+  .popup_container .close {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    right: 25rem;
+    top: 0px;
+    display: none;
+    cursor: pointer;
+    background: url(../images/close_button.png);
+    z-index: 980;
+  }
+  
+  /* 팝업창2 설정 */
+  .main2 {
+    width: 100%;
+    height: auto;
+    display: none;
+    overflow: hidden;
+    position: absolute;
+    top: 25%;
+    left: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 999;
+  }
+  
+  .popup_container2 {
+    display: block;
+    width: 600px;
+    height: 50rem;
+    background: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 20px auto;
+    padding-top: 50px;
+    overflow: hidden;
+    transition: 0.7s ease;
+  }
+  
+  .popup_container2 .popup2 {
+    display: block;
+    overflow: hidden;
+    width: 800px;
+    height: 500px;
+    background: url(../images/graphic/02_banner.png) no-repeat;
+    transition: 0.85s ease;
+    margin: auto;
+    z-index: -2;
+  }
+  
+  .popup_container2 .close2 {
+    display: none;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+    cursor: pointer;
+    background: url(../images/close_button.png);
+    z-index: 981;
+  }
+  
+  /* 팝업창3 설정 */
+  .main3 {
+    width: 100%;
+    height: auto;
+    display: none;
+    background: rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    position: absolute;
+    top: 25%;
+    left: 0;
+    z-index: 999;
+  }
+  
+  .popup_container3 {
+    display: block;
+    width: 950px;
+    height: 50rem;
+    background: none;
+    margin: 20px auto;
+    position: relative;
+    top: 0;
+    left: 0;
+    padding-top: 50px;
+    overflow: hidden;
+    transition: 0.7s ease;
+  }
+  
+  .popup_container3 .popup3 {
+    display: block;
+    width: 600px;
+    height: 50rem;
+    background: url(../images/graphic/03_art.png) no-repeat;
+    overflow: hidden;
+    transition: 0.85s ease;
+    margin: auto;
+    z-index: -2;
+  }
+  
+  .popup_container3 .close3 {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: none;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 981;
+    background: url(../images/close_button.png);
+    width: 32px;
+    height: 32px;
+  }
+  
+  /* 팝업창4 설정 */
+  .main4 {
+    width: 100%;
+    height: auto;
+    display: none;
+    background: rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    position: absolute;
+    top: 25%;
+    left: 0;
+    z-index: 999;
+  }
+  
+  .popup_container4 {
+    display: block;
+    width: 800px;
+    height: 600px;
+    background: none;
+    margin: 20px auto;
+    position: relative;
+    top: 0;
+    left: 0;
+    padding-top: 50px;
+    overflow: hidden;
+    transition: 0.7s ease;
+  }
+  
+  .popup_container4 .popup4 {
+    display: block;
+    width: 800px;
+    height: 500px;
+    background: url(../images/graphic/04_card.png) no-repeat;
+    overflow: hidden;
+    transition: 0.85s ease;
+    margin: auto;
+    z-index: -2;
+  }
+  
+  .popup_container4 .close4 {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: none;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 981;
+    background: url(../images/close_button.png);
+    width: 32px;
+    height: 32px;
+  }
+/* 팝업창 끝   */
+
+/* design 끝 */
+
+/* footer 시작 */
+.copyright{
+    width:100%;
+    height: 18rem;
+    text-align: center;
+    background-color:#16162d;
+    padding:2rem 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.copyright_txt{
+    font-size: 1.4rem;
+    color:#fff;
+    letter-spacing: 1.25px;
+}
+
+/* footer 끝 */
+
+/* media queries */
+
+@media screen and (max-width: 1024px) {
+    .nav-list li{
+        margin:1.4rem 0;
+    }
+
+    .nav-link{
+        font-size:4.5rem;
+    }
+
+    .works .swiper-container .swiper-button-prev{
+        left: 40px;
+    }
+
+    .works .swiper-container .swiper-button-next{
+        right: 40px;
+    }
+        
+}
+
+@media screen and (max-width: 768px) {
+    body{
+        background: #282242;
+    }
+    
+    .landing-text h1{
+        font-size:15rem;
+    }
+
+    .landing-text h6{
+        font-size: 1.7rem;
+    }
+
+    .nav-list{
+        flex-direction: column;
+    }
+
+    .nav-list li{
+        margin:2rem 0;
+    }
+
+    .nav-link{
+        font-size: 4.5rem;
+    }
+
+    .about-heading h1{
+        font-size: 8rem;
+
+    }
+
+    .section-heading h1{
+        font-size: 3rem;
+    }
+
+    .about-details .nav-list{
+        flex-direction: initial;
+    }
+
+    .about-details li{
+        margin: 0 2rem;
+    }
+
+    .icon-container{
+        width:7rem;
+        height: 7rem;
+    }
+
+    .icon-container i{
+        font-size: 4rem;
+    }
+    
+    .timeline ul{
+        margin:0 0 0 auto;
+    }
+ 
+    .timeline .date::before{
+        left:-20rem;
+    }
+
+    .timeline .date::after{
+        left:-5.9rem;
+    }
+
+    .box .content h3 {
+        font-size: 1.5em;
+    }
+
+    .box .content p {
+        font-size: 0.95rem;
+    }
+
+    .box .content .btnD {
+        font-size: 1.2em;
+    }
+
+    header {
+        background: url(../images/header.jpg) 17% center no-repeat;
+    }
+
+    .row {
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+
+    .box {
+        height: 19.8rem;
+    }
+
+}
+
+@media screen and (max-width: 600px){
+    .menu-toggler{
+        top:2rem;
+        right:2rem;
+    }
+
+    .landing-text h1{
+        font-size:8rem;
+    }
+
+    .landing-text h6{
+        font-size:1.4rem;
+    }
+
+    .nav-link{
+        font-size:3.5rem;
+    }
+
+    .about .container{
+        flex-direction: column;
+    }
+
+    .profile-img{
+        margin:0 0 7rem 0;
+    }
+
+    .portfolio-item{
+        flex-direction: column;
+    }
+
+    .portfolio-img{
+        margin:0 0 2rem 0;
+        order:1;
+    }
+
+    .portfolio-description{
+        margin:0;
+        order:2;
+    }
+
+    .timeline p{
+        font-size:1.6rem;
+    }
+
+    .time .date::before{
+        font-size:1.4rem;
+    }
+
+    form{
+        width:100%;
+    }
+
+    .up{
+        right:2rem;
+    }
+
+    .mouse-container {
+        left: 60%;
+    }
+
+}
+
+
+
+
+
+
+
